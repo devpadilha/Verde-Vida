@@ -1,15 +1,16 @@
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.kotlinAndroid)
+    id("com.android.application")
+    kotlin("android")
+    id("org.jetbrains.compose")
 }
 
 android {
-    namespace = "com.example.verdeevida.android"
-    compileSdk = 34
+    namespace = "com.plcoding.contactscomposemultiplatform.android"
+    compileSdk = 33
     defaultConfig {
-        applicationId = "com.example.verdeevida.android"
-        minSdk = 26
-        targetSdk = 34
+        applicationId = "com.plcoding.contactscomposemultiplatform.android"
+        minSdk = 24
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
     }
@@ -17,9 +18,9 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
+        kotlinCompilerExtensionVersion = "1.4.4"
     }
-    packaging {
+    packagingOptions {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
@@ -30,19 +31,20 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 }
 
 dependencies {
-    implementation(projects.shared)
-    implementation(libs.compose.ui)
-    implementation(libs.compose.ui.tooling.preview)
-    implementation(libs.compose.material3)
-    implementation(libs.androidx.activity.compose)
-    debugImplementation(libs.compose.ui.tooling)
+    implementation(project(":shared"))
+    implementation("androidx.compose.ui:ui:1.4.0")
+    implementation("androidx.compose.ui:ui-tooling:1.4.0")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.4.0")
+    implementation("androidx.compose.foundation:foundation:1.4.0")
+    implementation("androidx.compose.material:material:1.4.0")
+    implementation("androidx.activity:activity-compose:1.7.0")
 }
