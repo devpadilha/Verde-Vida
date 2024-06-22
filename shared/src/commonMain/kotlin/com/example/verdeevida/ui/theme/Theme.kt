@@ -1,8 +1,8 @@
-package com.example.compose
+package com.example.verdeevida.ui.theme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.material3.darkColorScheme
 
-private val lightScheme = lightColorScheme(
+val LightColorScheme = lightColorScheme(
     primary = primaryLight,
     onPrimary = onPrimaryLight,
     primaryContainer = primaryContainerLight,
@@ -33,7 +33,7 @@ private val lightScheme = lightColorScheme(
     inversePrimary = inversePrimaryLight,
 )
 
-private val darkScheme = darkColorScheme(
+val DarkColorScheme = darkColorScheme(
     primary = primaryDark,
     onPrimary = onPrimaryDark,
     primaryContainer = primaryContainerDark,

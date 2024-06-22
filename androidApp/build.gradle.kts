@@ -5,10 +5,10 @@ plugins {
 }
 
 android {
-    namespace = "com.plcoding.contactscomposemultiplatform.android"
+    namespace = "com.example.verdeevida.android"
     compileSdk = 33
     defaultConfig {
-        applicationId = "com.plcoding.contactscomposemultiplatform.android"
+        applicationId = "com.example.verdeevida.android"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
